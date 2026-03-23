@@ -6,7 +6,9 @@ const Form = () => {
   const [time, settime] = useState('')
   const [details, setdetails] = useState('')
 
-  const [allInfo, setallInfo] = useState([])
+  let localData=JSON.parse(localStorage.getItem('list')) || []
+
+  const [allInfo, setallInfo] = useState(localData)
 
   let eventHandler=(e)=>{
     e.preventDefault()
@@ -14,6 +16,8 @@ const Form = () => {
     let newInfo=[...allInfo]
     newInfo.push({time,details})
     setallInfo(newInfo)
+
+    localStorage.setItem('list',JSON.stringify(newInfo))
     // console.log(newInfo);
 
     // setallInfo([...allInfo,{time,details}]) - method-2

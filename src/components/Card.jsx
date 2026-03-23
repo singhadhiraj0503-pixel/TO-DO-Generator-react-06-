@@ -8,6 +8,8 @@ const Card = (props) => {
     let copy=[...props.allInfo]
     copy.splice(props.idx,1)
     props.setallInfo(copy)
+
+    localStorage.setItem('list',JSON.stringify(copy))
   }
   
   return (
