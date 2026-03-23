@@ -9,7 +9,7 @@ const Card = (props) => {
     copy.splice(props.idx,1)
     props.setallInfo(copy)
 
-    localStorage.setItem('list',JSON.stringify(copy))
+    // localStorage.setItem('list',JSON.stringify(copy))
   }
   
   return (
